@@ -288,6 +288,7 @@ Users
 
 .user_summary {
 	margin-bottom: 15px;
+	clear: left;
 }
 
 .user_balance.owes {
@@ -304,7 +305,7 @@ Users
 
 .user_balance {
 	float: left;
-	width: 250px;
+	width: 300px;
 }
 
 .user_detail {

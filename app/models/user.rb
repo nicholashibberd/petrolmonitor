@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   
   def total_contribution
     payment_amounts = payments.map {|payment| payment.contribution_for_user(self)}
-    payment_amounts.inject {|a, b| a + b}
+    payment_amounts.inject(0) {|a, b| a + b}
   end
   
   def balance

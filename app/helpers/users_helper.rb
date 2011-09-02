@@ -54,21 +54,6 @@ module UsersHelper
     end
   end
 
-  def summary_for_user1(user)
-    user_is_current_user = (user.id == current_user.id)
-    balance = user.balance
-    if balance > 0
-      summary = user_is_current_user ? "I am owed #{display_price(balance)}" : "#{user.name} is owed #{display_price(balance)}"
-      content_tag(:div, summary, :class => 'user_summary owed')
-    elsif balance < 0
-      summary = user_is_current_user ? "I owe #{display_price(balance)}" : "#{user.name} owes #{display_price(balance)}"
-      content_tag(:div, summary, :class => 'user_summary owes')
-    else
-      summary = user_is_current_user ? "I am square" : "#{user.name} is square"
-      content_tag(:div, summary, :class => 'user_summary square')
-    end
-  end
-  
   def summary_for_user(user)
     user_is_current_user = (user.id == current_user.id)
     balance = user.balance
@@ -83,7 +68,7 @@ module UsersHelper
     elsif balance < 0
       xmlmarkup("#{user_owes} #{display_price(balance.abs)}", detail, 'owes')
     else
-      xmlmarkup("#{user_am} square", detail, 'square')
+      xmlmarkup("#{user_have} no outstanding balance", detail, 'square')
     end
   end
   
