@@ -365,3 +365,25 @@ Groups
 	right: 15px;
 	top: 20px;
 }
+
+/* 
+************************************************************
+Flash
+************************************************************
+*/
+
+#flash {
+	background: red;
+	background: #CC0000 url(/images/backgrounds/flash_error.jpg) repeat-x;	
+	background: -webkit-gradient(linear, left top, left bottom, from(#D05A5B), to(#CC0000));
+	background: -moz-linear-gradient(top,  #D05A5B,  #CC0000);		
+	padding: 15px 35px;
+	color: white;
+	text-shadow: none;
+	margin-bottom: 20px;
+}
+
+.flash_item {
+	margin-bottom: 5px;
+}
+

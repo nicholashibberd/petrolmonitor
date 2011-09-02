@@ -18,8 +18,11 @@ class PaymentsController < ApplicationController
       group = Group.find(params[:payment][:group_id])
       redirect_to group_path(group)
     else
-      flash[:error] = "Payment did not save"
-      render 'new'
+      raise payment.errors.inspect
+      payment.errors.each do |error, msg|
+        flash_display(error, msg)
+      end
+      redirect_to new_group_payment_path
     end
   end
   

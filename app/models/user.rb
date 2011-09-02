@@ -59,6 +59,14 @@ class User < ActiveRecord::Base
     history_array = payments.map {|payment| payment.payment_summary} + journeys.map {|journey| journey.journey_summary}
     history_array.sort {|a, b| b["date"] <=> a["date"]}
   end
+  
+  def has_incomplete_journey?
+    !latest_incomplete_journey.nil?
+  end
+  
+  def latest_incomplete_journey
+    journeys.select {|journey| !journey.complete?}.last
+  end
       
   private
   

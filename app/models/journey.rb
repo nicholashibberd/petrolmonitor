@@ -1,9 +1,15 @@
 class Journey < ActiveRecord::Base
   has_and_belongs_to_many :users
   default_scope order('date')
+  validates_presence_of :user_ids
+  validates_presence_of :description
   
   def total_miles
-    end_mileage - start_mileage
+    if end_mileage and start_mileage
+       end_mileage - start_mileage
+    else 
+       0
+    end
   end
   
   def miles_per_user
@@ -17,6 +23,7 @@ class Journey < ActiveRecord::Base
       'description' => description,
       'travellers' => users_to_string,
       'miles' => total_miles,
+      'complete' => complete?,
       'id' => id
     }
   end
@@ -30,6 +37,18 @@ class Journey < ActiveRecord::Base
       last_user = user_names.last
       [users_except_last.join(', '), last_user].join(' and ')
     end
+  end
+  
+  def complete?
+    !end_mileage.nil?
+  end
+  
+  def validate
+     errors[:mileage] << "You have a negative mileage" if invalid_mileage
+  end
+  
+  def invalid_mileage
+    !end_mileage.nil? and end_mileage < start_mileage
   end
   
 end

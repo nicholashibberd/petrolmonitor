@@ -14,12 +14,14 @@ class JourneysController < ApplicationController
   
   def create
     journey = Journey.new(params[:journey])
-    if journey.save
+    if journey.save      
       group = Group.find(params[:journey][:group_id])
       redirect_to group_path(group)
     else
-      flash[:error] = "Journey did not save"
-      render 'new'
+      journey.errors.each do |error, msg|
+        flash_display(error, msg)
+      end
+      redirect_to new_group_journey_path
     end
   end
   

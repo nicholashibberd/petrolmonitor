@@ -2,6 +2,8 @@ class Payment < ActiveRecord::Base
   belongs_to :group
   has_and_belongs_to_many :users
   default_scope order('date')
+  validates_presence_of :amount
+  validates_presence_of :user_ids
 
   def amount_parse=(amount)
     if amount.include?(".")

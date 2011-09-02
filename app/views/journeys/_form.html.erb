@@ -8,7 +8,7 @@
 </script>
 <% end %>
 
-<%= form_for [@group, @journey] do |f| %>
+<%= form_for @journey, :url => group_journeys_path do |f| %>
 	<%= f.hidden_field :group_id, :value => params[:group_id] %>
 	<div class="field">
 		<div>

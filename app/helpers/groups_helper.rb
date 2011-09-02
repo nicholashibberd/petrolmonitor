@@ -21,7 +21,11 @@ module GroupsHelper
   end
 
   def journey_history_item(history_item)
-    "#{history_item['miles']} miles travelled by #{history_item["travellers"]} (#{history_item["description"]})"
+    if history_item['complete'] == true
+      "#{history_item['miles']} miles travelled by #{history_item["travellers"]} (#{history_item["description"]})"
+    else
+      "Incomplete journey by #{history_item["travellers"]}" + " (#{history_item["description"]})" if history_item['description']
+    end
   end
   
   def date_display(date, format)
