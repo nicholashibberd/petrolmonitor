@@ -313,8 +313,18 @@ Users
 }
 
 /*****************************************************
-Groups History
+Groups
 *****************************************************/
+
+#group_balances {
+	position: relative;
+}
+
+#group_token {
+	position: absolute;
+	right: 0px;
+	top: 5px;
+}
 
 .history_item {
 	margin-bottom: 10px;

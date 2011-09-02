@@ -1,5 +1,8 @@
-<div class="section">
-	<h2>Group balances</h2>
+<div class="section" id="group_balances">
+	<div id="group_token">
+		The code to join this group is <%= @group.group_token %>
+	</div>
+	<h2><%= @group.name %> balances</h2>
 	<div class="subsection">
 		<% @group.users.each do |user| %>
 			<%= summary_for_user(user).html_safe %>
@@ -8,7 +11,7 @@
 </div>
 
 <div class="section">
-	<h2>Group history</h2>	
+	<h2><%= @group.name %> history</h2>	
 		<div class="subsection">
 	<% @group.history.first(20).each do |history_item| %>
 		<%= history_item_summary(@group, history_item).html_safe %>

@@ -2,5 +2,5 @@
 	<%= top_nav_link 'New journey', new_group_journey_path(current_user.group) %>
 	<%= top_nav_link 'New fill up', new_group_payment_path(current_user.group) %>
 	<%= top_nav_link 'My summary', user_path(current_user) %>	
-	<%= top_nav_link 'Group summary', group_path(current_user.group) %>
+	<%= top_nav_link current_user.group.name, group_path(current_user.group) %>
 </div>
