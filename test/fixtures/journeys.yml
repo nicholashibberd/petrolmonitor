@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  start_mileage: 1
+  end_mileage: 1
+  user_id: 1
+  group_id: 1
+  date: 2011-08-29
+
+two:
+  start_mileage: 1
+  end_mileage: 1
+  user_id: 1
+  group_id: 1
+  date: 2011-08-29

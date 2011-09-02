@@ -1,0 +1,17 @@
+<div class="section">
+	<h2>Group balances</h2>
+	<div class="subsection">
+		<% @group.users.each do |user| %>
+			<%= summary_for_user(user).html_safe %>
+		<% end %>
+	</div>
+</div>
+
+<div class="section">
+	<h2>Group history</h2>	
+		<div class="subsection">
+	<% @group.history.first(20).each do |history_item| %>
+		<%= history_item_summary(@group, history_item).html_safe %>
+	<% end %>
+	</div>
+</div>

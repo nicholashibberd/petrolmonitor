@@ -1,0 +1,18 @@
+<div class="section">
+	<h2>Join new group</h2>
+	<div class="subsection">
+		<%= form_tag join_new_group_groups_path do %>	
+			<div class="field">
+				<div>
+				<%= label_tag 'Group Token' %>	
+				</div>
+				<div>
+					<%= text_field_tag :group_token, nil, :placeholder => "Enter your group token here" %>
+				</div>
+			</div>
+			<div class="confirm_button" id="join_new_group_button">
+			<%= submit_tag 'Join group' %>
+			</div>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,65 @@
+<%= content_for :head do %>
+<%= javascript_include_tag 'jquery', 'datepicker' %>
+<%= stylesheet_link_tag 'cupertino/jquery-ui.css' %>
+<script type="text/javascript">
+	$(function() {
+		$("#datepicker").datepicker({dateFormat: 'DD d MM yy', firstDay: 1});
+	});
+</script>
+<% end %>
+
+<%= form_for [@group, @journey] do |f| %>
+	<%= f.hidden_field :group_id, :value => params[:group_id] %>
+	<div class="field">
+		<div>
+			<%= f.label :description %>
+		</div>
+		<div>
+			<%= f.text_field :description %>
+		</div>
+	</div>
+	<div class="field">
+		<div>
+			<%= f.label :mileage_at_start %>
+		</div>
+		<div>
+			<%= f.text_field :start_mileage, :value => @journey.start_mileage ? @journey.start_mileage : @group.current_mileage %>
+		</div>
+	</div>
+	<div class="field">
+		<div>
+			<%= f.label :mileage_at_end %>
+		</div>
+		<div>
+			<%= f.text_field :end_mileage %>
+		</div>
+	</div>
+	<div class="field">
+		<div>
+			<%= f.label :date %>
+		</div>
+		<div>
+			<%= f.text_field :date, :value => (l (@journey.date ||= Date.today), :format => :long), :id => 'datepicker' %>
+		</div>
+	</div>
+	<div>
+		<%= f.label :who_was_on_this_journey? %>
+	</div>
+	<div id="journey_users">
+		<% @group.users.each do |user| %>
+			<div class="journey_user">
+				<div class="journey_user_input">
+					<%= check_box_tag "journey[user_ids][]", user.id, @journey.users.include?(user), :id => "user_#{user.name.parameterize}" %>
+				</div>
+				<div class="journey_user_name">
+					<%= label_tag "user_#{user.name.parameterize}", user.name %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+	<div id="journey_submit">
+		<div>
+			<%= f.submit :Submit %>
+		</div>
+	</div>
+<% end %>

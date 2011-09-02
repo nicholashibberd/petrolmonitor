@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Petrolmonitor</title>
+  <%= stylesheet_link_tag :all %>
+  <%= csrf_meta_tag %>
+	<%= yield :head %>
+</head>
+<body>
+	<div id="background">
+		<div id="background_header">
+		</div>
+		<div id="background_content">
+		</div>
+	</div>
+	<div id="wrapper">
+		<div id="header">
+			<div id="logo">
+				<%= link_to 'Petrol Monitor', home_path %>
+			</div>
+			<%= user_status(current_user) %>
+			<%= render 'layouts/top_nav' if current_user and current_user.group %>
+		</div>
+		<div id="content_wrapper">
+			<div class="content <%= request[:controller] %>_content">
+			<% if !flash.blank? %>
+				<div id="flash">
+					<ul>
+					<% flash.each do |key, value| %> 
+						<li class="flash_item <%= key %>"><%= value %></li>
+					<% end %>
+					</ul>
+				</div>
+			<% end %>
+			<%= yield %>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

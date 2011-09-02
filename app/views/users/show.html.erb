@@ -1,0 +1,32 @@
+<%= group_info(@user) do %>
+	<div class="section">
+		<h2>My balance</h2>
+		<div class="subsection">
+			<%= summary_for_user(@user).html_safe %>
+		</div>
+	</div>
+
+	<div class="section">
+		<h2>My history</h2>	
+			<div class="subsection">
+		<% @user.history.first(20).each do |history_item| %>
+			<%= history_item_summary(@user.group, history_item).html_safe %>
+		<% end %>
+		</div>
+	</div>
+<% end %>
+
+<%= group_links(@user) do %>
+	<div id="user_welcome">
+	Welcome <%= @user.name %>. You haven't joined a group yet!
+	</div>
+	<div id="add_group_buttons">
+		<div class="edit_button button" id="join_group_button">
+			<%= link_to 'Join group', join_groups_path(:user_id => @user.id) %>
+		</div>
+		<div class="confirm_button button">
+		<%= link_to 'Create new group', new_group_path(:user_id => @user.id) %>
+		</div>
+	</div>
+<% end %>
+

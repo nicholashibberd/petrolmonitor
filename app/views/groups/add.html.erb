@@ -1,0 +1,19 @@
+<div class="section">
+	<h2>Create new group</h2>
+	<div class="subsection">
+		<%= form_tag add_new_group_groups_path do %>	
+			<%= hidden_field_tag 'group[current_user_id]', current_user.id %>
+			<div class="field">
+				<div>
+				<%= label_tag 'Group Name' %>	
+				</div>
+				<div>
+				<%= text_field_tag 'group[name]', nil, :placeholder => 'Choose a name for this group' %>
+				</div>		
+			</div>
+			<div class="confirm_button" id="create_new_group_button">
+			<%= submit_tag 'Create group' %>
+			</div>
+		<% end %>
+	</div>
+</div>

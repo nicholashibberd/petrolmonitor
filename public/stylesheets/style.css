@@ -1,0 +1,356 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#background {
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+}
+
+#background_header {
+	height: 200px;
+/*	background: url(/images/backgrounds/background_header.jpg) repeat-x, #1C3F6F;	*/
+	background: -webkit-gradient(linear, left top, left bottom, from(#587194), to(#333333));
+	background: -moz-linear-gradient(top,  #587194,  #333333);
+	border-bottom: 1px solid #fff;
+}
+
+#background_content {
+	height: 200px;
+/*	background: url(/images/backgrounds/background_content.jpg) repeat-x, #E7E7BC;		*/
+	background: -webkit-gradient(linear, left top, left bottom, from(#FBFCE9), to(#ccc));
+	background: -moz-linear-gradient(top,  #FFFFFF,  #ccc);
+}
+
+/*
+***************************************************
+Layout
+***************************************************
+*/
+
+body {
+	background-color: #ccc;
+	color: #333;
+}
+
+body, input {
+	font-family: 'Delius', Arial;
+	font-family: 'Lucida Grande', Arial;
+	text-shadow: white 0px -1px 0px;
+}
+
+#wrapper {
+	margin: auto;
+	width: 990px;
+}
+
+#content_wrapper {
+	padding: 15px;
+	background-color: #fff;
+	border-radius: 5px;
+}
+
+.content {
+	background: #eee;
+	padding: 30px;
+	position: relative;
+}
+
+/*
+***************************************************
+Header
+***************************************************
+*/
+
+#header {
+	position: relative;
+	color: #E7E7BC;
+	height: 160px;
+}
+
+#signout_link {
+	position: absolute;
+	top: 20px;
+	right: 0px;
+	text-shadow: none;
+}
+
+#logo {
+	color: #c7f2f2;
+	font-size: 40px;
+	font-weight: bold;
+	padding-top: 50px;
+	text-shadow: white 0px -1px 0px;
+}
+
+/*
+***************************************************
+Top Nav
+***************************************************
+*/
+
+#top_nav {
+	margin-top: 20px;
+	padding-left: 20px;
+	text-shadow: none;
+}
+
+#top_nav a {
+	display: block;
+	float: left;
+	margin-right: 10px;
+	padding: 10px 20px;
+	font-size: 20px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+#top_nav a.selected {
+	background-color: #fff;
+	color: #1F5F8B;
+}
+
+
+
+
+/*
+***************************************************
+Common Elements
+***************************************************
+*/
+
+
+h1, h2 {
+	color: #576E91;
+	margin-bottom: 20px;
+}
+
+a, a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
+.strong {
+	font-weight: bold;
+}
+
+.subsection {
+	background-color: #fff;
+	padding: 30px;
+	position: relative;
+	border-radius: 3px;
+	margin-bottom: 20px;
+	overflow: auto;
+}
+
+.section {
+	margin-bottom: 40px;
+}
+
+.section h2 {
+	margin-bottom: 10px;
+}
+
+/*
+***************************************************
+Inputs and Buttons
+***************************************************
+*/
+
+input[type=text], input[type=password] {
+	background: url(/images/backgrounds/input.jpg);
+	border: 1px solid #999;
+	border-radius: 3px;
+	width: 314px;
+	height: 36px;
+	font-size: 16px;
+	padding: 8px 15px;
+}
+
+input[type=submit] {
+	padding: 10px 20px;
+	background: url(/images/backgrounds/submit_button.jpg) repeat-x, #339933;			
+	background: -webkit-gradient(linear, left top, left bottom, from(#79B979), to(#339933));
+	background: -moz-linear-gradient(top,  #79B979,  #339933);
+	border: none;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 13px;
+	cursor: pointer;
+	text-shadow: none;
+}
+
+.field {
+	margin-bottom: 10px;
+}
+
+.button {
+	margin-bottom: 30px;
+	text-shadow: none;
+}
+
+.button a {
+	padding: 10px 20px;
+	color: #fff;
+	border-radius: 3px;
+	font-size: 13px;
+}
+
+.edit_button a {
+	background-color: #CC6600;	
+	background: url(/images/backgrounds/edit_button.jpg) repeat-x, #CC6600;			
+	background: -webkit-gradient(linear, left top, left bottom, from(#FAA94A), to(#CC6600));
+	background: -moz-linear-gradient(top,  #FAA94A,  #CC6600);
+}
+
+.confirm_button a {
+	background-color: #339933;
+	background: url(/images/backgrounds/submit_button.jpg) repeat-x, #339933;			
+	background: -webkit-gradient(linear, left top, left bottom, from(#79B979), to(#339933));
+	background: -moz-linear-gradient(top,  #79B979,  #339933);
+}
+
+.delete_button a {
+	background-color: #CC0000;
+	background: url(/images/backgrounds/flash_error.jpg) repeat-x, #CC0000;		
+	background: -webkit-gradient(linear, left top, left bottom, from(#F76D6C), to(#CC0000));
+	background: -moz-linear-gradient(top,  #F76D6C,  #CC0000);
+}
+
+.blue_button a {
+	background-color: #557ff5;
+	background: url(/images/backgrounds/blue_button.jpg) repeat-x, #3366CC;		
+	background: -webkit-gradient(linear, left top, left bottom, from(#557ff5), to(#3366CC));
+	background: -moz-linear-gradient(top,  #557ff5,  #3366CC);
+}
+
+#payment_users, #journey_users {
+	background-color: #fff;
+	padding: 20px;
+	width: 305px;
+	margin-top: 5px;
+}
+
+.payment_user, .journey_user {
+	margin-bottom: 10px;
+}
+
+.payment_user_input, .journey_user_input {
+	float: left;
+	width: 30px;
+	vertical-align: center;
+}
+
+.payment_user_name, .journey_user_name {
+	margin-left: 30px;
+	padding-top: 2px;
+}
+
+.payment_user_name label, .journey_user_name label {
+	cursor: pointer;	
+}
+
+#payment_submit, #journey_submit {
+	margin-top: 10px;
+}
+
+#amount_field {
+	position: relative;
+}
+
+#amount_field input {
+	padding-left: 33px;
+	width: 296px;
+}
+
+#pound_sign {
+	position: absolute;
+	top: 17px;
+	left: 20px;
+}
+
+#new_user_signup {
+	position: absolute;
+	bottom: 39px;
+	left: 130px;
+}
+
+
+/*****************************************************
+Users
+*****************************************************/
+
+#user_welcome {
+	margin-bottom: 30px;
+}
+
+.user_summary {
+	margin-bottom: 15px;
+}
+
+.user_balance.owes {
+	color: #CC0000;
+}
+
+.user_balance.owed {
+	color: green;
+}
+
+.user_balance.square {
+	color: #000000;
+}
+
+.user_balance {
+	float: left;
+	width: 250px;
+}
+
+.user_detail {
+	color: #666;
+}
+
+/*****************************************************
+Groups History
+*****************************************************/
+
+.history_item {
+	margin-bottom: 10px;
+	height: 40px;
+	padding: 10px;
+	position: relative;
+}
+
+.payment_history_item {
+	background-color: #eee;
+}
+
+.history_item_field {
+	float: left;
+}
+
+.journey_history_item_icon {
+	width: 100px;
+}
+
+.payment_history_item_icon {
+	padding-left: 5px;
+	width: 95px;
+}
+
+.history_item_content, .history_item_date {
+	padding-top: 12px;
+	font-size: 14px;
+}
+
+.history_item_content {
+	width: 565px;
+	margin-left: 200px;
+}
+
+.history_item_edit_link {
+	position: absolute;
+	right: 15px;
+	top: 20px;
+}
