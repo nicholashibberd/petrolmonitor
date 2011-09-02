@@ -11,7 +11,7 @@
 
 #background_header {
 	height: 200px;
-/*	background: url(/images/backgrounds/background_header.jpg) repeat-x, #1C3F6F;	*/
+	background:  #1C3F6F url(/images/backgrounds/background_header.jpg) repeat-x;
 	background: -webkit-gradient(linear, left top, left bottom, from(#587194), to(#333333));
 	background: -moz-linear-gradient(top,  #587194,  #333333);
 	border-bottom: 1px solid #fff;
@@ -19,7 +19,7 @@
 
 #background_content {
 	height: 200px;
-/*	background: url(/images/backgrounds/background_content.jpg) repeat-x, #E7E7BC;		*/
+	background: #E7E7BC url(/images/backgrounds/background_content.jpg) repeat-x;
 	background: -webkit-gradient(linear, left top, left bottom, from(#FBFCE9), to(#ccc));
 	background: -moz-linear-gradient(top,  #FFFFFF,  #ccc);
 }
@@ -171,7 +171,7 @@ input[type=text], input[type=password] {
 
 input[type=submit] {
 	padding: 10px 20px;
-	background: url(/images/backgrounds/submit_button.jpg) repeat-x, #339933;			
+	background:  #339933 url(/images/backgrounds/submit_button.jpg) repeat-x;			
 	background: -webkit-gradient(linear, left top, left bottom, from(#79B979), to(#339933));
 	background: -moz-linear-gradient(top,  #79B979,  #339933);
 	border: none;
@@ -200,28 +200,28 @@ input[type=submit] {
 
 .edit_button a {
 	background-color: #CC6600;	
-	background: url(/images/backgrounds/edit_button.jpg) repeat-x, #CC6600;			
+	background: #CC6600 url(/images/backgrounds/edit_button.jpg) repeat-x;			
 	background: -webkit-gradient(linear, left top, left bottom, from(#FAA94A), to(#CC6600));
 	background: -moz-linear-gradient(top,  #FAA94A,  #CC6600);
 }
 
 .confirm_button a {
 	background-color: #339933;
-	background: url(/images/backgrounds/submit_button.jpg) repeat-x, #339933;			
+	background: #339933 url(/images/backgrounds/submit_button.jpg) repeat-x;			
 	background: -webkit-gradient(linear, left top, left bottom, from(#79B979), to(#339933));
 	background: -moz-linear-gradient(top,  #79B979,  #339933);
 }
 
 .delete_button a {
 	background-color: #CC0000;
-	background: url(/images/backgrounds/flash_error.jpg) repeat-x, #CC0000;		
+	background: #CC0000 url(/images/backgrounds/flash_error.jpg) repeat-x;		
 	background: -webkit-gradient(linear, left top, left bottom, from(#F76D6C), to(#CC0000));
 	background: -moz-linear-gradient(top,  #F76D6C,  #CC0000);
 }
 
 .blue_button a {
 	background-color: #557ff5;
-	background: url(/images/backgrounds/blue_button.jpg) repeat-x, #3366CC;		
+	background: #3366CC url(/images/backgrounds/blue_button.jpg) repeat-x;		
 	background: -webkit-gradient(linear, left top, left bottom, from(#557ff5), to(#3366CC));
 	background: -moz-linear-gradient(top,  #557ff5,  #3366CC);
 }
