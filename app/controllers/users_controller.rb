@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     redirect_to signin_path
     else
       set_user_cookie user
-      redirect_to user
+      redirect_to home_path
     end
   end
   
